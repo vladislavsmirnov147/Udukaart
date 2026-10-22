@@ -1,0 +1,15 @@
+KT4  Ülesanne 1
+
+1. MapScreenil on kolm eelvaadet. Esimene on tavaline vaade, teises on üks foto valitud ja kolmandas on tühi linn. Kõik kasutavad sama koodi, aga andmed ja olek on erinevad.
+
+2. MapScreeni saab eelvaates näha, sest see ei hoia ise olekut. Andmed tulevad parameetrite kaudu. Kui ta ise andmeid laadiks, oleks eelvaadet raskem kasutada.
+
+3. CoverageHeaderil on kolm eelvaadet. Väärtused on 0.0, 56.8 ja 100.0.
+
+4. Kui album on tühi, näitab PhotoStrip teksti, mitte tühja pildiriba.
+
+5. Eelvaatefunktsioonid on private, sest neid kasutatakse ainult eelvaate jaoks. Teised failid ei pea neid kasutama.
+
+6. UdukaartTheme on vajalik, et eelvaates oleksid samad värvid ja tekstistiilid nagu päris rakenduses.
+
+7. Näidisandmeid kasutatakse selleks, et erinevaid ekraane saaks vaadata ilma pärisandmeid laadimata. Täpset asukohta ei saanud kontrollida, sest L04 projekti faile ei olnud.
