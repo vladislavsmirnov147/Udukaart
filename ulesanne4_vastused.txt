@@ -1,0 +1,57 @@
+Ülesanne 4  Vastused
+
+1. Millise teegi ma lisasin?
+
+Lisasin projekti Gsoni teegi. Seda saab kasutada JSON-andmetega töötamiseks.
+
+Kirjutasin versiooni 2.10.1 faili libs.versions.toml. Lisasin teegi ka libraries ossa ja app/build.gradle.kts faili reaga implementation(libs.gson).
+
+Pärast seda kontrollisin projekti ja ehitamine õnnestus.
+
+2. Mitu seadet minSdk 34 juures nimekirjast kadus?
+
+Minu nimekirjas oli ainult üks seade, Medium Phone API 37.0. See jäi alles ka siis, kui muutsin minSdk väärtuseks 34.
+
+Minu nimekirjast ei kadunud ühtegi seadet.
+
+3. Miks see nii muutus?
+
+minSdk näitab, kui vana Androidi versiooniga saab rakendust kasutada.
+
+Kui minSdk on 34, siis vanemad seadmed enam ei sobi. Minu emulaatoril on API 37, nii et see jäi nimekirja.
+
+4. Mis vahe on compileSdk, minSdk ja targetSdk vahel?
+
+compileSdk näitab, millise Androidi versiooni abil rakendust ehitatakse.
+
+minSdk näitab kõige vanemat Androidi versiooni, millel rakendus töötab.
+
+targetSdk näitab, millise Androidi versiooni jaoks rakendus on tehtud.
+
+Minu projektis on compileSdk 37, minSdk 29 ja targetSdk 37.
+
+5. Miks on versioonikataloog parem kui versiooni kirjutamine otse ehitusfaili?
+
+Minu arvates on versioonikataloog mugavam, sest kõik teekide versioonid on ühes kohas.
+
+Kui tahan midagi muuta, on seda lihtsam leida. Nii on ka vähem võimalusi vigu teha.
+
+6. Mida teeb BOM ja miks Compose seda kasutab?
+
+BOM aitab hoida Compose'i teekide versioonid omavahel sobivana.
+
+Siis ei pea iga teegi versiooni eraldi kirjutama.
+
+7. Mis juhtub, kui kaks moodulit nõuavad sama teegi eri versiooni?
+
+Gradle proovib valida sobiva versiooni. Tavaliselt valitakse uuem versioon.
+
+Mõnikord võivad sellest tekkida probleemid, kui vanem ja uuem versioon ei sobi hästi kokku.
+
+8. Mida ma lõpuks tegin?
+
+Muutsin minSdk väärtuseks 34 ja vaatasin seadmete nimekirja.
+
+Seejärel muutsin minSdk tagasi 29 peale.
+
+Lõpuks tegin Gradle'i sünkroonimise ja kõik töötas.
