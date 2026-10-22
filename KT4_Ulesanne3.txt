@@ -1,0 +1,51 @@
+KT4 Ülesanne 3: Kergita olek ekraanilt välja
+
+1. Mis on state hoisting ja miks seda vaja on?
+
+State hoisting tähendab, et komponendi olek viiakse kõrgemale tasemele.
+
+MapScreen ei hoia ise valitud foto ega albumi olekut. Need väärtused antakse talle parameetrite kaudu.
+
+See teeb MapScreeni lihtsamaks, võimaldab seda erinevate andmetega kasutada ja eraldi testida.
+
+2. Mis vahe on MapScreenil ja MapRoute'il?
+
+MapScreen näitab kasutajaliidest. Ta saab valitud foto, albumi oleku ja tegevused parameetritena.
+
+MapRoute ühendab kasutajaliidese olekuga. Ta loob rememberMapControlsState() abil olekuhoidja ja annab vajalikud väärtused ning funktsioonid MapScreenile.
+
+Seega MapScreen on olekuta komponent ja MapRoute on olekut haldav komponent.
+
+3. Miks kasutada eraldi MapControlsState klassi?
+
+MapControlsState hoiab koos kaks omavahel seotud väärtust: selectedPhotoId ja albumOpen.
+
+Samuti sisaldab see funktsioone foto valimiseks ja albumi avamiseks või sulgemiseks.
+
+Kui kasutaja vajutab sama foto peale uuesti, eemaldatakse valik.
+
+Eraldi klass teeb oleku haldamise selgemaks ja aitab vältida olekuloogika kirjutamist otse kasutajaliidesesse.
+
+4. Kuidas säilib olek pärast ekraani pööramist?
+
+rememberSaveable aitab säilitada oleku pärast ekraani pööramist.
+
+MapControlsState kasutab Saverit, mis salvestab valitud foto ID ja albumi avatud või suletud oleku.
+
+Kui ekraan pööratakse, taastatakse need väärtused.
+
+Nii jääb valitud foto alles ka pärast ekraani pööramist.
+
+Tehtud muudatused
+
+Lõin faili MapControlsState.kt.
+
+Lisasin selectedPhotoId ja albumOpen olekud.
+
+Lisasin foto valimise ja valiku eemaldamise võimaluse.
+
+Lisasin rememberMapControlsState() funktsiooni ja Saveri.
+
+Lõin MapScreeni ja MapRoute'i, sest algne L04 näidisprojekt ei olnud kättesaadav.
+
+MapScreen ei kasuta remember-funktsiooni. Olekut haldab MapRoute.
