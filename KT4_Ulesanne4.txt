@@ -1,0 +1,59 @@
+KT4 Ülesanne 4: Paranda neli paigutusviga
+
+1. Millised vead olid komponentides?
+
+StreetCard: taust oli väiksem kui kaart, sest padding asus enne background'i.
+
+PhotoTile: vajutus töötas ka ümara nurga taga, sest clickable asus enne clip'i.
+
+CoverageBadge: funktsioonil puudus modifier-parameeter, seetõttu ei saanud kutsuja komponendi paigutust muuta.
+
+CityRow: modifier anti Text-komponendile, mitte Row-juurelemendile.
+
+2. Miks padding enne ja pärast background'i annab eri tulemuse?
+
+Kui padding on enne background'i, jääb välimine täidis taustavärvita.
+
+Kui background on enne padding'ut, katab taust kogu komponendi ala ja täidis jääb sissepoole.
+
+StreetCardis tõstsin background'i enne padding'ut.
+
+3. Miks clip peab tulema enne clickable'it?
+
+Modifierite järjekord mõjutab vajutatavat ala.
+
+Kui clickable on enne clip'i, võib vajutus toimida ka ümardatud nurkadest väljaspool.
+
+Kui clip on enne clickable'it, jääb vajutatav ala ümara kuju sisse.
+
+4. Miks modifier on parameeter, mitte komponendi sisemine asi?
+
+Modifier-parameeter võimaldab komponendi kasutajal määrata selle suurust, tausta, täidist ja paigutust.
+
+See muudab komponendi paindlikumaks ja korduvkasutatavaks.
+
+CoverageBadge sai parameetri modifier: Modifier = Modifier.
+
+5. Miks modifier peab minema juurelemendile?
+
+Juurelement määrab kogu komponendi paigutuse.
+
+CityRow puhul peab kutsuja antud modifier minema Row-le, mitte ainult esimesele Text-komponendile.
+
+Nii mõjutavad taust ja täidis tervet rida.
+
+6. Kuidas ajutine taustavärv aitab viga näha?
+
+Ajutine background(Color.Red) näitab, millisele alale modifier mõjub.
+
+Punase tausta abil saab kontrollida, kas värv katab kogu komponendi või ainult ühe osa.
+
+Pärast kontrollimist saab ajutise punase tausta eemaldada.
+
+7. Milline neist neljast oleks päris projektis kõige ohtlikum?
+
+Minu arvates on kõige ohtlikum PhotoTile'i viga.
+
+Kui vajutus töötab ka nähtavast ümardatud nurgast väljaspool, võib kasutaja kogemata valele elemendile vajutada.
+
+See võib põhjustada ootamatuid tegevusi kasutajaliideses.
