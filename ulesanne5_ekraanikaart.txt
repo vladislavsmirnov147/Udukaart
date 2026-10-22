@@ -1,0 +1,63 @@
+Ülesanne 5 Udukaardi ekraanikaart ja õigused
+
+1. Rakenduse ekraanid
+
+Minu rakenduses Udukaart on neli ekraani.
+
+Kaart – sellel ekraanil näeb kasutaja kaarti ja enda asukohta. Kaardi laadimiseks on vaja internetti.
+
+Avastatud – siin näeb kasutaja kohti, mida ta on juba avastanud. Varem salvestatud kohti saab vaadata ka ilma internetita.
+
+Album – siin saab kasutaja vaadata oma avastatud kohtade pilte ja mälestusi. Kui pildid on telefonis salvestatud, töötab see ka ilma internetita.
+
+Seaded – siin saab kasutaja muuta rakenduse seadeid, lülitada jälgimise välja ja eksportida oma andmeid. Põhiseaded töötavad ilma internetita.
+
+2. Jälgimine ja andmete eksportimine
+
+Kasutaja saab jälgimise välja lülitada Seaded ekraanil.
+
+Samal ekraanil on ka võimalus oma andmeid eksportida, näiteks failina telefoni salvestada.
+
+3. Kaardi alternatiiv
+
+Kui kasutaja ei saa kaarti kasutada, saab ta avada kohtade nimekirja.
+
+Nimekirjas on kohtade nimed ja lühikesed kirjeldused. Seda saab kasutada ka ilma kaardita ning see sobib paremini ka ekraanilugejaga kasutamiseks.
+
+4. Rakenduse õigused
+
+Asukoht – rakendus küsib asukoha luba siis, kui kasutaja avab kaardi ja soovib enda asukohta näha. Seda on vaja kasutaja asukoha näitamiseks ja lähedal olevate kohtade leidmiseks.
+
+Täpne asukoht – seda küsitakse ainult siis, kui kasutaja soovib täpset asukohta kasutada. Tavalise kaardivaate jaoks võib piisata ka ligikaudsest asukohast.
+
+Taustal asukoht – seda luba küsitakse eraldi ainult siis, kui kasutaja soovib, et kohtade avastamine jätkuks ka siis, kui rakendus ei ole avatud. Enne küsimist selgitab rakendus, miks seda vaja on.
+
+Füüsilise aktiivsuse tuvastamine – see on eraldi õigus. Seda küsitakse ainult siis, kui kasutaja lülitab sisse liikumise automaatse tuvastamise. Kui seda funktsiooni ei kasutata, pole seda luba vaja küsida.
+
+Teavitused – Android 13 ja uuemates versioonides küsib rakendus teavituste luba eraldi. Seda küsitakse siis, kui kasutaja soovib saada teateid uute avastuste kohta.
+
+Internet – seda kasutatakse kaardi ja vajadusel veebist tulevate andmete laadimiseks. Interneti kasutamiseks ei pea kasutajalt eraldi luba küsima.
+
+5. Millal ja miks õigusi küsitakse?
+
+Rakendus ei küsi kõiki õigusi kohe avamisel.
+
+Iga õigust küsitakse siis, kui kasutaja hakkab vastavat funktsiooni kasutama. Enne loa küsimist näeb kasutaja lihtsat selgitust, milleks seda vaja on.
+
+6. Mis juhtub, kui kasutaja keeldub asukohaõigusest?
+
+Kui kasutaja ei anna asukoha luba, saab ta rakendust ikka kasutada.
+
+Ta saab vaadata avastatud kohtade nimekirja, albumit ja seadeid. Kaardil ei näidata tema praegust asukohta ning automaatne kohtade avastamine ei tööta.
+
+Kasutaja saab hiljem telefoni seadetes asukoha loa sisse lülitada.
+
+7. Privaatsus
+
+Kasutaja peab teadma, milliseid andmeid rakendus kasutab ja miks.
+
+Asukohta kasutatakse kohtade avastamiseks. Jälgimise saab seadetes välja lülitada ja kasutaja saab oma andmed eksportida.
+
+Taustal asukoha kasutamine, füüsilise aktiivsuse tuvastamine ja teavitused on eraldi valikud. Rakendus ei pea neid kasutama, kui kasutaja seda ei soovi.
+
+Enne rakenduse valmis tegemist tuleb kontrollida, et need selgitused oleksid samad ka projekti privaatsuse kirjelduses.
