@@ -8,14 +8,24 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.udukaart.ui.theme.UdukaartTheme
 
 class MainActivity : ComponentActivity() {
+
+    private val walkDetection = DemoWalkDetection()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +35,47 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             UdukaartTheme {
+                var discoveryEnabled by rememberSaveable {
+                    mutableStateOf(true)
+                }
+
+                var minAccuracy by rememberSaveable {
+                    mutableFloatStateOf(15f)
+                }
+
+                LaunchedEffect(discoveryEnabled, minAccuracy) {
+                    Log.d(
+                        "Udukaart",
+                        "Discovery enabled=$discoveryEnabled, accuracy=$minAccuracy"
+                    )
+                }
+
+                DisposableEffect(discoveryEnabled, walkDetection) {
+                    if (discoveryEnabled) {
+                        walkDetection.subscribe {
+                            Log.d("Udukaart", "Walk detected")
+                        }
+                    }
+
+                    onDispose {
+                        walkDetection.unsubscribe()
+                    }
+                }
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .verticalScroll(rememberScrollState())
                     ) {
-                        StepCounter()
-                        MeterCounter()
-                        CitySearch()
+                        MapRoute()
+
+                        DiscoverySettings(
+                            enabled = discoveryEnabled,
+                            onEnabledChange = { discoveryEnabled = it },
+                            minAccuracy = minAccuracy,
+                            onMinAccuracyChange = { minAccuracy = it }
+                        )
                     }
                 }
             }
@@ -64,18 +108,19 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Tere tulemast Udukaarti!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+private fun MainScreenPreview() {
     UdukaartTheme {
-        Greeting("Android")
+        Column {
+            MapRoute()
+
+            DiscoverySettings(
+                enabled = true,
+                onEnabledChange = {},
+                minAccuracy = 15f,
+                onMinAccuracyChange = {}
+            )
+        }
     }
 }

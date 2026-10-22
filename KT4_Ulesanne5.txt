@@ -1,0 +1,95 @@
+KT4  Ülesanne 5: Uus komponent koos eelvaadetega
+
+1. Miks DiscoverySettings on olekuta komponent?
+
+DiscoverySettings ei hoia ise oma olekut. Komponent saab enabled ja minAccuracy väärtused parameetritena.
+
+Muudatustest teatamiseks kasutab ta onEnabledChange ja onMinAccuracyChange funktsioone.
+
+Seetõttu saab sama komponenti kasutada erinevate väärtustega ja eelvaadetes.
+
+2. Kuidas Switch ja Slider töötavad?
+
+Switch näitab, kas automaatne avastamine on sisse või välja lülitatud.
+
+Slider võimaldab muuta minimaalset täpsust vahemikus 5 kuni 50 meetrit.
+
+Kui kasutaja muudab Switchi või Sliderit, kutsutakse välja vastav callback. Uus väärtus salvestatakse MainActivity olekusse.
+
+3. Miks kasutada stringResource'i?
+
+stringResource võimaldab võtta kasutajaliidese tekstid strings.xml failist.
+
+See teeb tekstide muutmise ja rakenduse tõlkimise lihtsamaks.
+
+Kasutasin stringResource'i automaatse avastamise ja minimaalse täpsuse tekstide jaoks.
+
+4. Miks on vaja kolme Preview'd?
+
+Esimene Preview näitab tavalist olekut.
+
+Teine Preview näitab komponenti väljalülitatud Switchiga.
+
+Kolmas Preview kasutab suuremat kirjasuurust, et hinnata teksti ja paigutuse sobivust.
+
+Preview'd aitavad vaadata kasutajaliidese erinevaid olekuid ilma rakendust käivitamata.
+
+5. Miks kasutatakse rememberSaveable'i?
+
+rememberSaveable säilitab lihtsad olekuväärtused ka pärast ekraani pööramist.
+
+MainActivity kasutab seda enabled ja minAccuracy väärtuste jaoks.
+
+Nii saab kasutaja jätkata samade seadetega ka pärast ekraani pööramist.
+
+6. Mis vahe on LaunchedEffectil ja DisposableEffectil?
+
+LaunchedEffect käivitab kõrvaltegevuse, kui komponent ilmub kompositsiooni või selle võtmed muutuvad.
+
+Minu koodis kasutatakse seda seadete väärtuste logimiseks.
+
+DisposableEffect sobib tegevustele, millel on vaja ka lõpetamist.
+
+Minu koodis kasutatakse seda WalkDetectioni tellimuse alustamiseks ja lõpetamiseks.
+
+7. Miks peab tellimuse lõpetama?
+
+Kui tellimust ei lõpetata, võib vana kuulaja jääda aktiivseks.
+
+See võib põhjustada mitut samaaegset kuulajat või tarbetut ressursikasutust.
+
+DisposableEffecti onDispose kutsub välja unsubscribe().
+
+8. Kuidas on DiscoverySettings seotud MainActivityga?
+
+MainActivity hoiab discoveryEnabled ja minAccuracy olekut.
+
+Need väärtused antakse DiscoverySettingsile parameetritena.
+
+DiscoverySettings näitab kasutajaliidest ja saadab muudatused callback'ide kaudu tagasi MainActivityle.
+
+MapRoute jääb ekraanile ning DiscoverySettings kuvatakse selle all.
+
+9. Milline WalkDetectioni lahendus on kasutusel?
+
+Algne L04 projekt ei olnud kättesaadav.
+
+Seetõttu lõin õppetöö jaoks WalkDetectioni liidese ja DemoWalkDetectioni klassi.
+
+See võimaldab näidata subscribe() ja unsubscribe() kasutamist, kuid ei tuvasta päriselt kõndimist.
+
+10. Kokkuvõte
+
+Lõin faili DiscoverySettings.kt.
+
+Lisasin Switchi ja Slideri vahemikuga 5f kuni 50f.
+
+Kasutasin stringResource'i ja lisasin vajalikud tekstid strings.xml faili.
+
+Lisasin kolm Preview'd.
+
+Ühendasin komponendi MainActivityga ja kasutasin rememberSaveable'i.
+
+Lisasin LaunchedEffecti ning DisposableEffecti.
+
+Rakenduse käivitamine, pööramiskatse ja tellimuse tegelik toimimine vajavad veel kontrollimist.
