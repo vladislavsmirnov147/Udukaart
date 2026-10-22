@@ -1,0 +1,45 @@
+Ülesanne 3 - .gitignore selgitus
+
+`.gitignore` on fail, kuhu kirjutan, milliseid faile ja kaustu Git ei pea salvestama. Nii ei satu GitHubi üleliigsed failid ega salajased andmed.
+
+**Mida need read tähendavad?**
+
+- `*.iml` – Android Studio moodulifailid.
+- `.gradle` – Gradle'i ajutised failid.
+- `/local.properties` – minu arvuti kohalikud seadistused.
+- `/.idea/caches` – Android Studio vahemälu.
+- `/.idea/libraries` – teekide seadistused.
+- `/.idea/modules.xml` – moodulite seadistused.
+- `/.idea/workspace.xml` – minu tööruumi seadistused.
+- `/.idea/navEditor.xml` – navigatsiooniredaktori seadistused.
+- `/.idea/assetWizardSettings.xml` – ressursiviisardi seadistused.
+- `.DS_Store` – macOS-i süsteemifail.
+- `/build` – projekti ehitamisel tekkinud failid.
+- `/captures` – salvestatud ekraani- ja diagnostikafailid.
+- `.externalNativeBuild` – natiivse koodi ajutised ehitusfailid.
+- `.cxx` – C++ ehitamise failid.
+- `local.properties` – kohalikud seadistused ka teistes kaustades.
+- `/.idea/` – kogu Android Studio seadistuste kaust.
+- `/**/build/` – kõikide moodulite ehituskaustad.
+- `*.apk` – valmis Androidi rakenduse failid.
+- `*.aab` – rakenduse avaldamiseks mõeldud failid.
+- `*.jks` – rakenduse allkirjastamise võtmehoidlad.
+- `*.keystore` – võtmehoidla failid.
+- `*.key` – salajased võtmefailid.
+- `*.pem` – võtmete ja sertifikaatide failid.
+- `.env` – fail, kus võivad olla paroolid ja muud salajased andmed.
+- `.env.*` – teised keskkonnaseadistuste failid.
+
+**Mida ma ise lisasin?**
+
+Lisasin `.idea/` ja kõikide `build/` kaustade välistused. Lisasin ka APK- ja AAB-failide ning võtmete ja `.env` failide välistused. Need failid ei pea GitHubis olema.
+
+**Kuidas ma kontrollisin?**
+
+Kõigepealt ehitasin projekti ja sain teate `BUILD SUCCESSFUL`.
+
+Siis kustutasin ajutiselt `.gitignore` failist rea `/.idea/` ja kirjutasin terminali `git status`. Nägin, et `.idea/` kaust ilmus nimekirja.
+
+Pärast panin rea tagasi ja kontrollisin uuesti. Terminalis oli kirjas `nothing to commit, working tree clean`.
+
+Lõpuks tegin esimese commit'i ja laadisin oma Udukaart projekti GitHubi.
