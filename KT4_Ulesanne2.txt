@@ -1,0 +1,35 @@
+KT4 Ülesanne 2: Paranda kolm olekuviga
+
+1. Miks tavaline var Composable'is ei tööta?
+
+Tavaline var ei ole Compose'i jaoks jälgitav olek. Kui selle väärtus muutub, ei tea Compose, et ekraani tuleb uuendada. Lisaks võib väärtus uuesti nulliks muutuda, kui funktsioon uuesti käivitatakse.
+
+StepCounteris kasutasin remember ja mutableStateOf, et loendur muutuks nupule vajutades ekraanil.
+
+2. Mille poolest erinevad remember ja mutableStateOf?
+
+remember jätab väärtuse meelde kompositsiooni uuendamise ajal.
+
+mutableStateOf teeb väärtuse jälgitavaks. Kui väärtus muutub, uuendab Compose seda kasutavat ekraaniosa.
+
+Neid kasutatakse sageli koos.
+
+3. Miks mutableListOf ei käivita rekompositsiooni?
+
+Tavaline mutableListOf ei ole Compose'i jaoks jälgitav loend. Kui loendi sisu muutub, ei pruugi ekraan uueneda.
+
+MeterCounteris asendasin loendi mutableStateOf väärtusega. Nüüd suureneb meetrite arv iga vajutusega 10 võrra ja ekraan uueneb.
+
+4. Millal valida rememberSaveable ja millal remember?
+
+remember sobib ajutise oleku jaoks, mida ei pea pärast ekraani pööramist säilitama.
+
+rememberSaveable sobib oleku jaoks, mis peab säilima ka pärast ekraani pööramist.
+
+StepCounteris kasutasin remember, sest sammude arv peab pööramisel nulli minema.
+
+CitySearchis kasutasin rememberSaveable, sest otsingutekst peab pööramisel alles jääma.
+
+5. Miks kood kompileerus, kuigi oli vale?
+
+Koodis ei olnud süntaksivigu
