@@ -1,0 +1,29 @@
+Ülesanne 5 – Udukaardi ekraanikaart
+
+1. UDUKAART
+1)Kaart. Näitab kaarti ja kasutaja asukohta. Kui kaarti ei saa kasutada, saab avada kohtade nimekirja.
+2)Avastatud.Näitab kohti, mida kasutaja on juba avastanud.Salvestatud kohti saab vaadata ka ilma internetita.
+3)Album. Näitab avastatud kohtade pilte ja mälestusi. Telefoni salvestatud pilte saab vaadata ilma internetita.
+4)Seaded. Siin saab muuta rakenduse seadeid. Töötab ka ilma internetita. Siin saab jälgimise välja lülitada. Siin saab oma andmed eksportida.
+
+
+2. Millised ekraanid töötavad ilma internetita?
+
+Kaardi laadimiseks on vaja internetti.
+Avastatud ekraan töötab ka ilma internetita, kui kohad on varem salvestatud.
+Album töötab ilma internetita, kui pildid on telefonis olemas.
+
+Seaded ekraani saab kasutada ka ilma internetita.
+
+3. Kust saab jälgimise välja lülitada?
+
+Kasutaja saab jälgimise välja lülitada Seaded ekraanil. Seal on eraldi valik, millega saab asukoha jälgimise peatada.
+
+4. Kust saab oma andmed eksportida?
+
+Kasutaja saab oma andmed eksportida Seaded ekraanilt. Seal saab valida andmete eksportimise ja salvestada need failina.
+
+5. Milline on kaardi ligipääsetav alternatiiv?
+
+Kaardi asemel saab kasutaja avada kohtade nimekirja.
+Nimekirjas on kohtade nimed ja lühikesed kirjeldused. See on kasulik inimestele, kellel on kaarti raske kasutada. Nimekirja saab kasutada ka ekraanilugejaga.
